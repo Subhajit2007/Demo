@@ -1,95 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Todo list</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-       body{
-           background-color: black;
-           text-align: center;
-       }
-        div{
-            height: 200px;
-            width: 300px;
-            color: white;
-            background-color: gray;
-            border: 1px solid white;
-            border-radius:5px;
-            padding-left: 10px;
-            font-size: .50em;
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>title</title>
+        
+    </head>
+    <body id="body">
+        <script>
             
-            overflow: auto;
-            margin: 0 auto;
-            
-        }
-        .texts{
-           
-            display: flex;
-            left: 40px;
-        }
-        input:focus{
-            outline: 0;
-        }
-        img{
-            color: white;
-            
-        }
-    </style>
-</head>
-<body onload="loadfunc()">
-            <img src="https://placehold.co/150x30/black/white?text=Todo+List" alt="Todo List"/>
-    <div id="textAria">
-
-        <h1 id="loading">Loading...</h1>
-    </div>
-    <br />
-    <input type="text" id="sendTxt" placeholder="enter your todo" />
-    <button type="submit" id="sendBtn">submit</button>
-    <button id="removeBtn">delete</button>
-
-  
-    <script>
-      
-        let sendTxt = document.querySelector("#sendTxt")
-        let btn = document.querySelector("#sendBtn")
-        let rbtn = document.querySelector("#removeBtn")
-        let div = document.querySelector("#textAria")
-        let loading = document.querySelector("#loading")
-        let h1 = document.querySelector(".texts")
-        btn.addEventListener("click", showTodo);
-        function showTodo(){
-            if( sendTxt.value == ""){
-                alert("enter your todo tusk")
-            }
-            else{
-                
-                let h1 = document.createElement("h1")
-                h1.setAttribute("class","texts")
-                h1.textContent = "• "+sendTxt.value
-                div.appendChild(h1)
-                sendTxt.value = ""
-             
-                localStorage.setItem("data",div.innerHTML)
-                
-            }
-            
-        }
-       
-       function loadfunc(){
-           div.innerHTML = localStorage.getItem("data")
-          
-           
-          
-           
-       }
-       rbtn.addEventListener("click",deleteTodo)
-       function deleteTodo(){
-           div.innerText = ""
-           localStorage.clear()
-       }
-   
-  
-    </script>
-</body>
+        </script>
+    </body>
 </html>
